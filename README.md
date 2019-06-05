@@ -37,6 +37,8 @@ This script calculates slope and acceleration at each point of the ridge, and th
 
 It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge.
 
+<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Sample_Curvature_Output.gif">
+
 ### Program Usage
 
 #### Requirements
