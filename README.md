@@ -21,7 +21,7 @@ There are 3 main scripts included in this repository, along with a master script
 This is a bash script which concatenates the input csv files, and outputs a single csv with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
 
 #### Point_Simplifier.rmd
-This is an R script which uses the package deldir to perform a Voronoi tesselation with the input points (orange). It then uses rgeos to find the insersections of the polygons within the pixel boundaries (blue)
+This is an R script which uses the package deldir to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses rgeos to find the insersections of the polygons within the pixel boundaries (blue)
 
 The packages TSP and PairViz are used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
 
