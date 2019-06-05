@@ -10,8 +10,8 @@ existing data and returns an excel file containing a measure of curviness for ea
 
 ### Introduction
 
-<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Microridges_from_Sagasti_website.gif">
-*Image from www.mcdb.ucla.edu/Research/Sagasti/Sagasti_lab_home.html *
+<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Microridges_from_Sagasti_website.gif" width="50%">
+*Image from Sagasti lab website*
 
 Microridges are actin protrusions on the surface of skin cells. Our lab is interested in the development and function of these ridges in larval zebrafish. Images of ridges can be taken by labeling actin within the ridges with LifeAct-GFP, and imaging skin cells uing confocal microscopy. Some manipulations during development seem to increase the curviness of these ridges, so there was a need for an objective way to measure the "curviness" of the ridges of a cell. Therefore, I wrote the included scripts which output a meaure of curvature of each ridge, both as a simple function of the total ridge length divided by the distance between the start and end points of each ridge, and as the sum of the mathematical curvature at each point divided by the total length of the ridge.
 
