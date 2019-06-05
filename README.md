@@ -14,7 +14,7 @@ Microridges are actin protrusions on the surface of skin cells. Our lab is inter
 
 Additional information and images can be found at the [lab website](https://www.mcdb.ucla.edu/Research/Sagasti/Sagasti_lab_home.html), under Projects/Skin cell morphogenesis.
 
-<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Microridges_from_Sagasti_website.gif" width="50%">
+<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Microridges_from_Sagasti_website.gif" width="40%">
 
 *Image from Sagasti lab website*
 
