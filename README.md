@@ -55,6 +55,7 @@ The data must:
  * be in the form of x and y coordinates of the pixels of the skeletonized ridge, and with a column for ridge number.
  * be inputted in csv format.
  * There cannot be data files with identical names.
+ * There cannot be spaces in file names.
  
 #### Usage Instructions
 These scripts can be individually run on your computer, or you can use the master script to run all of them.
