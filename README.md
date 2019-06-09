@@ -23,7 +23,7 @@ Additional information and images can be found at the [lab website](https://www.
 
 ###  Program Workflow
 
-There are 3 main scripts included in this repository, along with a master script which can run the program in Hoffman2.
+There are 3 main scripts included in this repository, along with a master (wrapper) script which can run the program in Hoffman2.
 
 #### Concatenate.sh
 This is a bash script which concatenates the input csv files, and outputs a single csv with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
