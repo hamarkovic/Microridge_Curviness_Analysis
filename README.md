@@ -1,4 +1,5 @@
 # Microridge Curviness Analysis
+#### Author: Hannah Markovic (hmarkovi@uoregon.edu)
 
 This program takes pixel coordinate data from images of microridges and analyzes microridge 
 curviness. Microridges are small ridges formed by actin protrusions on the surface of skin cells 
@@ -28,9 +29,9 @@ There are 3 main scripts included in this repository, along with a master script
 This is a bash script which concatenates the input csv files, and outputs a single csv with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
 
 #### Point_Simplifier.rmd
-This is an R script which uses the package deldir to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses rgeos to find the insersections of the polygons within the pixel boundaries (blue)
+This is an R script which uses the R package deldir to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses the package rgeos to find the insersections of the polygons within the pixel boundaries (blue)
 
-The packages TSP and PairViz are used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
+The R package PairViz (which requires having the packages TSP and graph installed) is used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
 
 It loops this process over every ridge and cell, and saves the information as a csv which is the input for Curvature_Math.rmd
 
@@ -38,7 +39,7 @@ It loops this process over every ridge and cell, and saves the information as a 
 
 #### Curvature_Math.rmd
 
-This script calculates slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge.
+This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/W6_curvature_fomula.png" width="50%">
 
@@ -49,7 +50,7 @@ It also outputs a more simple measue of curvature obtained by dividing the total
 ### Program Usage
 
 #### Requirements
-You need to install these packages, using the install.packages(*package*) command:  
+You need to install these R packages, using the install.packages("*package*") command:  
  * [deldir](https://cran.r-project.org/web/packages/deldir/)
  * [graph](http://www.bioconductor.org/packages/3.4/bioc/html/graph.html) (For R 3.4)
  * [PairViz](https://cran.r-project.org/web/packages/PairViz/) 
@@ -69,16 +70,15 @@ The data must:
 #### Usage Instructions
 These scripts can be individually run on your computer, or you can use the master script to run all of them.
 
-All input files must be in the "Files_to_analyze" folder on hoffman; or, change the source of the files in the code, and run it on your computer with these files in a folder of your choosing.
+All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change the source of the files in the code, and run it on your computer with these files in a folder of your choosing.
 
 #### Outputs
-The program output a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
+The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
 
 #### Vignette
-You should be able to run this on Hoffman; however, you would need to install many libraries, and it'll take too much time to do during discussion.
 1. To run this test file, you first need to follow the directions for how to run the program, and install the required packages.
 2. Change the input in the file Point_Simplifier.rmd (read.csv command) to be the file "Ridge5_test.csv" in the appropriate location on your computer.
-3. Change the ouput of the file (write.csv command) to be in the apporpiate location on your computer.
+3. Change the ouput of the file (write.csv command) to be in the appropiate location on your computer.
 4. Run the file Point_Simplifier in R.
 5. The ouput will be the file "Points5.csv".
 6. If you graph the points of the input and ouput, the input should look identical to the orange points in the file "Voronoi after Viz green.gif", and the output should look identical to the green points.
@@ -86,14 +86,13 @@ You should be able to run this on Hoffman; however, you would need to install ma
 ### Author
 * Hannah Markovic
     * incoming Biology PhD student at the University of Oregon
-    * B.S. in Molecular, Cell and Developmental Biology with minor in Biomedical Research, 
-        expected June 2019, UCLA
+    * B.S. in Molecular, Cell and Developmental Biology with minor in Biomedical Research, UCLA
     * contact: hmarkovi@uoregon.edu
 * This program was created as the final project for the class EEB 177, Spring 2019, UCLA
 
 ### Acknowledgements
 * Aaron van Loon - miroridge deconvolution program
-* Aaron van Loon and Kaiser Atai - data
+* Kaiser Atai - sample data
 * Dr. Emily Curd and Daniel Chavez - guidance
 
 ### References
