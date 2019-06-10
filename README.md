@@ -1,5 +1,5 @@
 # Microridge Curviness Analysis
-#### Hannah Markovic (hmarkovi@uoregon.edu) </br> June 8, 2019
+#### Hannah Markovic (hmarkovi@uoregon.edu) </br> June 9, 2019
 
 This program takes pixel coordinate data from images of microridges and analyzes microridge 
 curviness. Microridges are small ridges formed by actin protrusions on the surface of skin cells 
@@ -85,7 +85,7 @@ The program outputs a single csv file. The two columns of this file contain the 
 
 ### Author
 * Hannah Markovic
-    * incoming Biology PhD student at the University of Oregon
+    * Biology PhD student at the University of Oregon
     * B.S. in Molecular, Cell and Developmental Biology with minor in Biomedical Research, UCLA
     * contact: hmarkovi@uoregon.edu
 * This program was created as the final project for the class EEB 177, Spring 2019, UCLA
