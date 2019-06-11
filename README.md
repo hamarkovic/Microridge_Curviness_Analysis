@@ -11,7 +11,7 @@ existing data and returns an excel file containing a measure of curviness for ea
 
 ### Introduction
 
-Microridges are actin protrusions on the surface of skin cells. Our lab is interested in the development and function of these ridges in larval zebrafish. Images of ridges can be taken by labeling actin within the ridges with LifeAct-GFP, and imaging skin cells uing confocal microscopy. Some manipulations during development seem to increase the curviness of these ridges, so there was a need for an objective way to measure the "curviness" of the ridges of a cell. Therefore, I wrote the included scripts which output a meaure of curvature of each ridge, both as a simple function of the total ridge length divided by the distance between the start and end points of each ridge, and as the sum of the mathematical curvature at each point divided by the total length of the ridge.
+Microridges are actin protrusions on the surface of skin cells. Our lab is interested in the development and function of these ridges in larval zebrafish. Images of ridges can be taken by labeling actin within the ridges with LifeAct-GFP, and imaging skin cells uing confocal microscopy. Some manipulations during development seem to increase the curviness of these ridges, so there was a need for an objective way to measure the "curviness" of the ridges of a cell. Therefore, I wrote the included scripts which output a measure of curvature of each ridge, both as a simple function of the total ridge length divided by the distance between the start and end points of each ridge, and as the sum of the mathematical curvature at each point divided by the total length of the ridge.
 
 Additional information and images can be found at the [lab website](https://www.mcdb.ucla.edu/Research/Sagasti/Sagasti_lab_home.html), under Projects/Skin cell morphogenesis.
 
@@ -50,6 +50,8 @@ It also outputs a more simple measue of curvature obtained by dividing the total
 ### Program Usage
 
 #### Requirements
+A Hoffman2 account, or another way to run bash scripts, is required to run this program over multiple files.
+ * Alternatively, each file could be individually run through Point_Simplifier.rmd and Curvature_Math.rmd, but this would require changing file locations in the scripts every time you run the programs.
 You need to install these R packages, using the install.packages("*package*") command:  
  * [deldir](https://cran.r-project.org/web/packages/deldir/)
  * [graph](http://www.bioconductor.org/packages/3.4/bioc/html/graph.html) (For R 3.4)
