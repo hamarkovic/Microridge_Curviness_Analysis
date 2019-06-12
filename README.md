@@ -85,7 +85,7 @@ cp *.csv ../Scripts/Files_to_analyze/
 cd ../Scripts/Files_to_analyze
 rm delete_this.txt
 cd ../
-module load R/3.5.1
+module load R/3.5.0
 R
 install.packages("deldir")
 install.packages("sp")
