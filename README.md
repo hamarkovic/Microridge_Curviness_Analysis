@@ -78,6 +78,8 @@ All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change
 To run the program in Hoffman2, follow these commands after cloning this github page and copying your files into Files_to_analyze, and removing delete_this from Files_to_analyze:
 
 ```{r}
+git clone https://github.com/hamarkovic/Microridge_Curviness_Analysis
+cd Microridge_Curviness_Analysis
 cd Vignette
 cp *.csv ../Scripts/Files_to_analyze/
 cd ../Scripts/Files_to_analyze
