@@ -1,6 +1,6 @@
 ## Vignette Information
 
-The Vignette runs the entire program, but with a small data set consisting of only 2 cells. One cell has microridges which appear more curved (Curved_test.csv), while the other has normal microridges (Not_curved_test.csv). The outputs will be __, and they should match the output files in the directory Sample_outputs. Averaging the values over the cells shows that the Curved_test cell has a greater curvature according to curvature_bylength (1.77 vs 1.13), but is in fact less curved based on curvature_formula (92.20 vs 188.86).
+The Vignette runs the entire program, but with a small data set consisting of only 2 cells. One cell has microridges which appear more curved (Curved_test.csv), while the other has normal microridges (Not_curved_test.csv). The outputs will be Concatenated_to_analyze.csv, OrderedPoints.csv, and OutputCurvatures.csv, and they should match the output files in the directory Sample_outputs. Averaging the values over the cells shows that the Curved_test cell has a greater curvature according to curvature_bylength (1.77 vs 1.13), but is in fact less curved based on curvature_formula (92.20 vs 188.86).
 
 ## Running the Vignette
 
