@@ -7,7 +7,7 @@ Additional information and images can be found at the [lab website](https://www.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/Microridges_from_Sagasti_website.gif" width="40%">
 
-*Image from Sagasti lab website*
+*Image from Sagasti lab website* </br>
 
 ###  Program Workflow
 
