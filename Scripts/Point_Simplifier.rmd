@@ -1,4 +1,3 @@
-```{r}
 print("Voronoi tesselation and point ordering begun")
 
 #Can be changed to take different file or location as input.
@@ -123,5 +122,3 @@ print("Voronoi tesselation and point ordering by open TSP algorithm done.")
 write.table(point_results, "OrderedPoints.csv", row.names = FALSE, sep = ",")
 
 print("Ordered points saved in file OrderedPoints.csv")
-
-```
