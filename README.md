@@ -75,16 +75,10 @@ These scripts can be individually run on your computer, or you can use the maste
 
 All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change the source of the files in the code, and run it on your computer with these files in a folder of your choosing.
 
-To run the program in Hoffman2, follow these commands after cloning this github page and copying your files into Files_to_analyze, and removing delete_this from Files_to_analyze:
+To run the program in Hoffman2, follow these commands after cloning this github page, copying your files into Files_to_analyze, and removing delete_this.txt from Files_to_analyze. A detailed example of this is in the Vignette folder if necessary. Begin within the Microridge_Curvature_Analysis directory.
 
 ```{r}
-git clone https://github.com/hamarkovic/Microridge_Curviness_Analysis
-cd Microridge_Curviness_Analysis
-cd Vignette
-cp *.csv ../Scripts/Files_to_analyze/
-cd ../Scripts/Files_to_analyze
-rm delete_this.txt
-cd ../
+cd Scripts
 module load R/3.5.0
 R
 install.packages("deldir")
