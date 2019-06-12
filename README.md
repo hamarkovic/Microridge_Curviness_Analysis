@@ -104,6 +104,9 @@ Vignette instructions are in the directory named Vignette. There are two test fi
 * Kaiser Atai - sample data
 * Dr. Emily Curd and Daniel Chavez - guidance
 
+### Citing
+doi:
+
 ### References
 * https://rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
 * http://tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx
