@@ -2,6 +2,6 @@
 
 bash concatenate.sh
 
-Rscript --vanilla Point_Simplifier.R
+Rscript Point_Simplifier.rmd
 
-Rscript --vanilla Curvature_Math.R
+Rscript Curvature_Math.rmd
