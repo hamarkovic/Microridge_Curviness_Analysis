@@ -45,7 +45,7 @@ This script calculates average slope and acceleration at each point of the ridge
 
 It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge. The output is a csv named OutputCurvatures.csv.
 
-<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Sample_Curvature_Output.gif">
+<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/Final_Curvature_Output.gif">
 
 ### Program Usage
 
