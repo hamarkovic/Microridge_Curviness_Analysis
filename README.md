@@ -25,15 +25,15 @@ Additional information and images can be found at the [lab website](https://www.
 
 There are 3 main scripts included in this repository, along with a master (wrapper) script which can run the program in Hoffman2 (**Master_Script.sh**).
 
-#### Concatenate.sh
-This is a bash script which concatenates the input csv files, and outputs a single csv with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
+#### concatenate.sh
+This is a bash script which concatenates the input csv files, and outputs a single csv (Concatenated_to_analyze.csv) with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
 
 #### Point_Simplifier.rmd
 This is an R script which uses the R package deldir to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses the package rgeos to find the insersections of the polygons within the pixel boundaries (blue)
 
 The R package PairViz (which requires having the packages TSP and graph installed) is used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
 
-It loops this process over every ridge and cell, and saves the information as a csv which is the input for Curvature_Math.rmd
+It loops this process over every ridge and cell, and saves the information as a csv (OrderedPoints.csv) which is the input for Curvature_Math.rmd
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/Voronoi%20after%20Viz%20green.gif">
 
@@ -43,7 +43,7 @@ This script calculates average slope and acceleration at each point of the ridge
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/W6_curvature_fomula.png" width="50%">
 
-It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge.
+It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge. The output is a csv named OutputCurvatures.csv.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Sample_Curvature_Output.gif">
 
