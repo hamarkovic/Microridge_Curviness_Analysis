@@ -1,0 +1,127 @@
+```{r}
+print("Voronoi tesselation and point ordering begun")
+
+#Can be changed to take different file or location as input.
+concat_file <- read.csv("Concatenated_to_analyze.csv", header = TRUE)
+names(concat_file) <- c("Cell", "Ridge", "X", "Y")
+print("First 10 lines of the input file:")
+concat_file[c(1:10), ]
+
+#count the number of ridges in the data frame
+rows <- nrow(concat_file)
+i <- 1
+ridge_counter <- 1
+while (i < rows) {
+    if (concat_file$Ridge[i] == concat_file$Ridge[i + 1] && concat_file$Cell[i] == concat_file$Cell[i+1]) {
+        i = i + 1
+    }
+    else {
+        ridge_counter = ridge_counter + 1
+        i = i + 1
+    }
+}
+print(paste("There are", ridge_counter, "ridges"))
+
+ridge_position_list <- data.frame(position = c(replicate(ridge_counter, 0)))
+#Get positions of the last row of each ridge:
+i <- 1
+counter <- 1
+while (i < rows) {
+    if (concat_file$Ridge[i] == concat_file$Ridge[i + 1] && concat_file$Cell[i] == concat_file$Cell[i + 1]) {
+        i = i + 1
+    }
+    else {
+        ridge_position_list$position[counter] <- i
+        counter = counter + 1
+        i = i + 1
+    }
+}
+ridge_position_list$position[ridge_counter] <- rows
+print("Ridge positions saved")
+
+#initialize data frame to store results in:
+point_results <- data.frame(Cell = c(), Ridge = c(), X = c(), Y = c())
+
+library(deldir)
+library(sp)
+library(rgeos)
+library(tidyverse)
+library(TSP)
+library(PairViz)
+
+#loop through ridges, and perform the Voronoi tesselation and ordering on each
+i <- 1
+last_position <- 1
+while (i <= ridge_counter) {
+    this_position <- ridge_position_list$position[i]
+    #If the ridge has only 4 points (boundaries of a single pixel), there are errors with gIntersection later.
+    #It wouldn't make sense to calculate curvature of a single point anyway.
+    if ((this_position - last_position) < 5) {
+        i = i + 1
+        next
+    }
+
+    #Keep cell (file) name and ridge number to use later
+    this_cell <- as.vector(concat_file$Cell[this_position])
+    this_ridge <- as.vector(concat_file$Ridge[this_position])
+
+    #subset current ridge coordinates
+    these_coordinates <- concat_file[c(last_position:this_position), c(3, 4)]
+
+    #make these points a matrix to use with sp
+    coord_matrix <- cbind(these_coordinates$X, these_coordinates$Y)
+
+    #do Voronoi tesselation on this ridge
+    Voronoi_ridge <- deldir(these_coordinates$X, these_coordinates$Y, plotit = FALSE)
+    rVoronoi <- tile.list(Voronoi_ridge)
+    rVoronoiPts <- SpatialPoints(do.call(rbind,
+                 lapply(rVoronoi, function(x) cbind(x$x, x$y))))
+
+    #turn initial points to Polygon to use with rgeos
+    ridge_spatial <- Polygon(coord_matrix)
+    ps <- Polygons(list(ridge_spatial), 1)
+    sps <- SpatialPolygons(list(ps))
+    #using gBuffer as suggested online to remove errors
+    sps <- gBuffer(sps, byid = TRUE, width = 0)
+    #setting proj4sptring to same value to remove errors
+    proj4string(sps) <- CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+    proj4string(rVoronoiPts) <- CRS("+proj=longlat +datum=WGS84 +no_defs +ellps=WGS84 +towgs84=0,0,0")
+
+    #The points given by the Voronoi tesselation which are within the original pixel boundaries are kept.
+    #Sorry for uninformative variable names.
+    maybegood <- gIntersection(sps, rVoronoiPts)
+    maybedf <- data.frame(X = maybegood$x, Y = maybegood$y)
+
+    #this if statement gave error sometimes when gBuffer wasn't used.
+    #If there are only 1 or 2 points in the ridge, it skips ordering them with PairViz and TSP.
+    if (nrow(maybedf) < 3) {
+        rows_after_TSP <- nrow(maybedf)
+        reorderTtest <- maybedf
+    }
+    else {
+        #Reorders points using an open TSP(Traveling Salesman Problem) algorithm.
+        distmat <- as.matrix(dist(maybedf))
+        openTSPtest <- order_tsp(distmat, cycle = FALSE)
+        reorderTtest <- maybedf[openTSPtest,]
+
+        rows_after_TSP <- nrow(reorderTtest)
+    }
+
+    data_to_append <- data.frame(Cell = c(replicate(rows_after_TSP, this_cell)), Ridge = c(replicate(rows_after_TSP, this_ridge)),
+                                 reorderTtest)
+    #Append new points to the data frame point_results
+    point_results <- rbind(point_results, data_to_append)
+
+    print(paste("Voronoi tesselation and point ordering done for Ridge ", this_ridge, ", Cell ", this_cell, "."))
+
+    last_position <- this_position + 1
+    i = i + 1
+}
+
+print("Voronoi tesselation and point ordering by open TSP algorithm done.")
+
+write.table(point_results, "OrderedPoints.csv", row.names = FALSE, sep = ",")
+
+print("Ordered points saved in file OrderedPoints.csv")
+
+```
