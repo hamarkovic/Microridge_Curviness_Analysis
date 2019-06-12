@@ -59,12 +59,10 @@ while (i < (rows - 1)) {
     #The cell and ridge IDs must match both the next point and 2 points ahead in order to calculate acceleration.
     if (bindedlength$cell[i] != bindedlength$cell[i + 1] | bindedlength$ridge[i] != bindedlength$ridge[i + 1] |
         bindedlength$cell[i] != bindedlength$cell[i + 2] | bindedlength$ridge[i] != bindedlength$ridge[i + 2]) {
-        print("This is the next ridge")
         acceleration_df$acceleration[i] <- 0
         acceleration_df$av_slope[i] <- 0
     }
     else {
-        print("I am in the else")
         #calculate average slope (to use for curvature calculation)
         acceleration_df$av_slope[i] <- (bindedlength$slope[i] + bindedlength$slope[i + 1]) / 2
 
