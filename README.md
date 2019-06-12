@@ -1,5 +1,5 @@
 # Microridge Curviness Analysis
-#### Hannah Markovic (hmarkovi@uoregon.edu) </br> June 9, 2019
+#### Hannah Markovic (hmarkovi@uoregon.edu) </br> June 12, 2019
 
 This program takes pixel coordinate data from images of microridges and analyzes microridge 
 curviness. Microridges are small ridges formed by actin protrusions on the surface of skin cells 
@@ -74,6 +74,11 @@ The data must:
 These scripts can be individually run on your computer, or you can use the master script to run all of them.
 
 All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change the source of the files in the code, and run it on your computer with these files in a folder of your choosing.
+
+To run the program in Hoffman2, follow these commands:
+```{r}
+blah
+```
 
 #### Outputs
 The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
