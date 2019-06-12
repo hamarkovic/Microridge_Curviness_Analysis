@@ -1,17 +1,7 @@
 # Microridge Curviness Analysis
 #### Hannah Markovic (hmarkovi@uoregon.edu) </br> June 12, 2019
 
-This program takes pixel coordinate data from images of microridges and analyzes microridge 
-curviness. Microridges are small ridges formed by actin protrusions on the surface of skin cells 
-which are thought to function in mucus retention. These microridges are imaged on the surface 
-of zebrafish skin cells by using LifeAct-GFP transgenic lines, making microridges 
-fluorescent. Another member of the lab took these images and has a program that deconvolutes 
-this data and turns it into a series of coordinates for each ridge. This program uses that 
-existing data and returns an excel file containing a measure of curviness for each microridge.
-
-### Introduction
-
-Microridges are actin protrusions on the surface of skin cells. Our lab is interested in the development and function of these ridges in larval zebrafish. Images of ridges can be taken by labeling actin within the ridges with LifeAct-GFP, and imaging skin cells uing confocal microscopy. Some manipulations during development seem to increase the curviness of these ridges, so there was a need for an objective way to measure the "curviness" of the ridges of a cell. Therefore, I wrote the included scripts which output a measure of curvature of each ridge, both as a simple function of the total ridge length divided by the distance between the start and end points of each ridge, and as the sum of the mathematical curvature at each point divided by the total length of the ridge.
+This program takes pixel coordinate data from images of microridges and analyzes microridge curviness. Microridges are small ridges formed by actin protrusions on the surface of skin cells which are thought to function in mucus retention. The Sagasti lab is interested in the development and function of these ridges in larval zebrafish. These microridges can be labeled on the surface of zebrafish skin cells by using LifeAct-GFP transgenic lines and can then be imaged using confocal microscopy. Some manipulations during development seem to increase the curviness of these ridges, so there was a need for an objective way to measure the "curviness" of the ridges of a cell. Therefore, I wrote the included scripts which output a measure of curvature of each ridge, both as a simple function of the total ridge length divided by the distance between the start and end points of each ridge, and as the sum of the mathematical curvature at each point divided by the total length of the ridge. Kaiser Atai took the images of cells with microridges that appear to be more curved. Aaron Van Loon helped convert these images into a usable format by skeletonizing the ridges and outputting the x and y coordinates of the boundaries of the skeletonized ridge.
 
 Additional information and images can be found at the [lab website](https://www.mcdb.ucla.edu/Research/Sagasti/Sagasti_lab_home.html), under Projects/Skin cell morphogenesis.
 
@@ -102,13 +92,7 @@ Some notes:
 The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
 
 #### Vignette
-Vignette instructions are in the directory named Vignette.
-1. To run this test file, you first need to follow the directions for how to run the program, and install the required packages.
-2. Change the input in the file Point_Simplifier.rmd (read.csv command) to be the file "Ridge5_test.csv" in the appropriate location on your computer.
-3. Change the ouput of the file (write.csv command) to be in the appropiate location on your computer.
-4. Run the file Point_Simplifier in R.
-5. The ouput will be the file "Points5.csv".
-6. If you graph the points of the input and ouput, the input should look identical to the orange points in the file "Voronoi after Viz green.gif", and the output should look identical to the green points.
+Vignette instructions are in the directory named Vignette. There are two test files in the folder, and the output after running the program can be compared to those in the folder Sample_outputs.
 
 ### Author
 * Hannah Markovic
