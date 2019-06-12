@@ -10,10 +10,10 @@ echo "... File concatenation begun"
 cp -r Files_to_analyze Processing
 
 first=1
-for cell in Processing/Files_to_analyze/*
+for cell in Processing/*
 do
         fileID=$cell
-        fileID=$(echo $fileID | sed 's/Processing\/Files_to_analyze\///' | sed 's/.csv//')
+        fileID=$(echo $fileID | sed 's/Processing\///' | sed 's/.csv//')
         if [ $first -eq 1 ]
         then
                 head -n 1 $cell | sed "s/^/Cell,/" > Concatenated_to_analyze.csv
