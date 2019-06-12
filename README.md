@@ -41,7 +41,7 @@ It loops this process over every ridge and cell, and saves the information as a 
 
 This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge.
 
-<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/W6_curvature_fomula.png" width="50%">
+<img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/W6_curvature_fomula.png" width="50%">
 
 It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge.
 
