@@ -78,10 +78,10 @@ All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change
 To run the program in Hoffman2, follow these commands after cloning this github page and copying your files into Files_to_analyze, and removing delete_this from Files_to_analyze:
 
 ```{r}
-cd Scripts/Vignette
+cd Vignette
 cp *.csv ../Scripts/Files_to_analyze/
 cd ../Scripts/Files_to_analyze
-rm -i delete_this.txt
+rm delete_this.txt
 cd ../
 module load R/3.5.1
 R
