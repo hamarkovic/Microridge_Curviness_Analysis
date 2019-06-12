@@ -37,7 +37,7 @@ It also outputs a more simple measue of curvature obtained by dividing the total
 
 ### Program Usage
 
-#### Requirements
+#### Dependencies
 A Hoffman2 account, or another way to run bash scripts, is required to run this program over multiple files.
  * Alternatively, each file could be individually run through Point_Simplifier.rmd and Curvature_Math.rmd, but this would require changing file locations in the scripts every time you run the programs. </br>
  
@@ -86,7 +86,7 @@ Some notes:
  * If it asks to update any packages, say "n".
  * It's not necessary to save the workspace image after quitting R.
 
-#### Outputs
+#### Expected Output
 The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
 
 #### Vignette
