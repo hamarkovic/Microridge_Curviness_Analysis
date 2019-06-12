@@ -117,7 +117,7 @@ Vignette instructions are in the directory named Vignette.
 * This program was created as the final project for the class EEB 177, Spring 2019, UCLA
 
 ### Acknowledgements
-* Aaron van Loon - miroridge deconvolution program
+* Aaron van Loon - microridge deconvolution program
 * Kaiser Atai - sample data
 * Dr. Emily Curd and Daniel Chavez - guidance
 
