@@ -52,6 +52,7 @@ It also outputs a more simple measue of curvature obtained by dividing the total
 #### Requirements
 A Hoffman2 account, or another way to run bash scripts, is required to run this program over multiple files.
  * Alternatively, each file could be individually run through Point_Simplifier.rmd and Curvature_Math.rmd, but this would require changing file locations in the scripts every time you run the programs. </br>
+ 
 You need to install these R packages, using the install.packages("*package*") command:  
  * [deldir](https://cran.r-project.org/web/packages/deldir/)
  * [graph](http://www.bioconductor.org/packages/3.4/bioc/html/graph.html) (For R 3.4)
