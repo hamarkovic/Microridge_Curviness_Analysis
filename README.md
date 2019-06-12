@@ -23,7 +23,7 @@ Additional information and images can be found at the [lab website](https://www.
 
 ###  Program Workflow
 
-There are 3 main scripts included in this repository, along with a master (wrapper) script which can run the program in Hoffman2.
+There are 3 main scripts included in this repository, along with a master (wrapper) script which can run the program in Hoffman2 (**Master_Script.sh**).
 
 #### Concatenate.sh
 This is a bash script which concatenates the input csv files, and outputs a single csv with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
@@ -98,6 +98,11 @@ install.packages("tidyverse")
 q()
 bash Master_Script.sh
 ```
+Some notes:
+ * If you already have R loaded on your terminal, it's sometimes necessary to repeat the line: module load R/3.5.0
+ * The first time you install a package, it will ask you to select a CRAN mirror
+ * If it asks to update any packages, say "n".
+ * It's not necessary to save the workspace image after quitting R.
 
 #### Outputs
 The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
