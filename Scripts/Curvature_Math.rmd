@@ -1,4 +1,3 @@
-```{r}
 print("Curvature math begun.")
 
 library(tidyverse)
@@ -198,5 +197,3 @@ print("Curvature math finished")
 write.table(ridge_curvatures_nopegs, "OutputCurvatures.csv", row.names = FALSE, sep = ",")
 
 print("Ridge curvatures saved in file OutputCurvature.csv")
-
-```
