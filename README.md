@@ -75,15 +75,33 @@ These scripts can be individually run on your computer, or you can use the maste
 
 All input files must be in the "Files_to_analyze" folder on Hoffman2; or, change the source of the files in the code, and run it on your computer with these files in a folder of your choosing.
 
-To run the program in Hoffman2, follow these commands:
+To run the program in Hoffman2, follow these commands after cloning this github page and copying your files into Files_to_analyze, and removing delete_this from Files_to_analyze:
+
 ```{r}
-blah
+cd Scripts/Vignette
+cp *.csv ../Scripts/Files_to_analyze/
+cd ../Scripts/Files_to_analyze
+rm -i delete_this.txt
+cd ../
+module load R/3.5.1
+R
+install.packages("deldir")
+install.packages("sp")
+install.packages("rgeos")
+install.packages("TSP")
+source('http://bioconductor.org/biocLite.R')
+biocLite('graph')
+install.packages("PairViz")
+install.packages("tidyverse")
+q()
+bash Master_Script.sh
 ```
 
 #### Outputs
 The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
 
 #### Vignette
+Vignette instructions are in the directory named Vignette.
 1. To run this test file, you first need to follow the directions for how to run the program, and install the required packages.
 2. Change the input in the file Point_Simplifier.rmd (read.csv command) to be the file "Ridge5_test.csv" in the appropriate location on your computer.
 3. Change the ouput of the file (write.csv command) to be in the appropiate location on your computer.
