@@ -9,8 +9,6 @@ Additional information and images can be found at the [lab website](https://www.
 
 *Image from Sagasti lab website*
 
-</br>
-
 ###  Program Workflow
 
 There are 3 main scripts included in this repository, along with a master (wrapper) script which can run the program in Hoffman2 (**Master_Script.sh**).
