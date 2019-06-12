@@ -1,0 +1,30 @@
+Peer Review (as of 6/4/19, time of review) 
+
+The ReadMe
+1- Yes, the ReadMe is the first document displayed. Yes, the ReadMe has a title (Microridge Curviness Analysis).
+   Yes, the name and contact information of the author (Hannah Markovic) is provided and easily accessible.
+2- Yes, the purpose of this project is provided. Hannah's main goal was to write a script that provided a "measure of curvature" of ridges found on larval zebrafish. This will be helpful in determining proper curvature of skin cells. --measure is misspelled, fifth sentence.
+3- Yes, the program workflow is very easy to understand. It is divided into 3 sections, each detailed one main part of the Project
+	Concatenate.sh: Merges files and organizes the new file by adding file names.
+	Point_Simplifier.rmd: Utilizes multiple differnet packages to create a graph depicting data points (orange) along ridge location (green).
+	Curveture_Math.rmd: Calculates slope and acceleration at each point on the ridge from the found data.
+4- Yes, Hannah's dependencies are listed as requirements. There is no mention of Hoffman 2, and I believe it should be listed since the concatenation of data files occurs in shell.
+5- Yes, there are brief instructions for running the program. Yes, the instructions makes sense, but I don't think they provide an ample amount of information. I would suggest adding a bit more instruction/detail to this section. Instead of suggesting to refer to the file, give a brief overview of the content of the files.
+	***Maybe instead of placing the step-by-stepinstructions under "Vignette", place under the heading "Instructions" since there is an entire other txt file dedicated to the Vignette itself.  
+6- Yes, this is listed under the Vignette section. 
+7- Yes, the motivation (Aaron van Loon) and RStudio package decriptions (cran.r-package) are cited.
+
+
+The Scripts
+8- Yes, there is a directory that contains all of the program scripts. It is called "Scripts."
+9- NA - Taken out of rubric requirements.
+
+The Vignette
+10- Yes, there is a directory called Vignette. It does include a test set, commands list, and the expected output (which in this case is a graph and table).
+11- Since there were three procedural parts to this project, each was run separately. I was unable to run the concatenation script in shell because I could not determine the small data set to run. The bash script specified "Files_to_analyze" and "Concatenated_to_analyze.csv" but I could not determine if this corresponded to the "Points5.csv" or "Ridge5_test.csv" files in the Vignette. I would suggest more detailed instructions in running this script.
+    The Curvature_Math.rmd ran smoothly in R and I was able to easily reproduct Hannah's results.
+    I had difficulty running the Point_Simplifier.rmd due to the PairViz package. It required the installation of "graph" but I could not successfully load this package to complete the R commands and elicit and output.
+12- Overall, I only was able to reproduce the expected output for the Curvature_Math.rmd portion of the project. I was unable to produce results at all for the other two portions of the project.
+
+General
+13- Be more descriptive in your instructions within the READMe.md file. Consider taking out the Vignette section within the README.md file and dedicating all of that information to the actual Vignette file.
