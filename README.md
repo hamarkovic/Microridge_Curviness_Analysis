@@ -114,43 +114,23 @@ Vignette instructions are in the directory named Vignette. There are two test fi
 doi:
 
 ### References
-* https://rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
-* http://tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx
-* https://stackoverflow.com/questions/9595117/identify-a-linear-feature-on-a-raster-map-and-return-a-linear-shape-object-using
-* https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/
-* https://cran.r-project.org/web/packages/deldir/
-* https://cran.r-project.org/web/packages/rgeos/
-* https://cran.r-project.org/web/packages/sp/
-* https://cran.r-project.org/web/packages/PairViz/
-* https://cran.r-project.org/web/packages/TSP/
-* http://www.bioconductor.org/packages/release/bioc/html/graph.html
-
-
-Lizarazo, Ivan. Creation of Spatial Polygons in R. 16 Aug. 2016, https://rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
-
-
-Dawkins, Paul. “Calculus III - Curvature.” Paul's Online Notes, 29 Nov. 2018, http://tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx.
-
-
-“Identify a Linear Feature on a Raster Map and Return a Linear Shape Object Using R.” Stack Overflow, 10 Mar. 2012, https://stackoverflow.com/questions/9595117/identify-a-linear-feature-on-a-raster-map-and-return-a-linear-shape-object-using.
-
 
 Belmonte, Nicolas Garcia. Voronoi Tessellation. https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/.
 
-
-Turner, Rolf. “Package Deldir.” *The Comprehensive R Archive Network (CRAN)*, 4 Jan. 2019, https://cran.r-project.org/web/packages/deldir/.
-
-
 Bivand, Roger. “Rgeos: Interface to Geometry Engine - Open Source ('GEOS') \[R package rgeos version 0.4-3].” *The Comprehensive R Archive Network (CRAN)*, 24 Apr. 2019, https://cran.r-project.org/web/packages/rgeos/.
 
+Dawkins, Paul. “Calculus III - Curvature.” Paul's Online Notes, 29 Nov. 2018, http://tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx.
 
-Pebesma, Edzer. “Classes and Methods for Spatial Data \[R Package Sp Version 1.3-1].” *The Comprehensive R Archive Network (CRAN)*, 5 June 2018, https://cran.r-project.org/web/packages/sp/.
-
-
-Hurley, Catherine, and R. W. Oldford. “Package PairViz.” *The Comprehensive R Archive Network (CRAN)*, 9 Aug. 2018, https://cran.r-project.org/web/packages/PairViz/.
-
+“Graph: A Package to Handle Graph Data Structures.” Bioconductor, www.bioconductor.org/packages/release/bioc/html/graph.html.
 
 Hahsler, Michael, and Kurt Hornick. “Traveling Salesperson Problem (TSP) \[R Package TSP Version 1.1-7].” *The Comprehensive R Archive Network (CRAN)*, 22 May 2019, https://cran.r-project.org/web/packages/TSP/.
 
+Hurley, Catherine, and R. W. Oldford. “Package PairViz.” *The Comprehensive R Archive Network (CRAN)*, 9 Aug. 2018, https://cran.r-project.org/web/packages/PairViz/.
 
-“Graph: A Package to Handle Graph Data Structures.” Bioconductor, www.bioconductor.org/packages/release/bioc/html/graph.html.
+“Identify a Linear Feature on a Raster Map and Return a Linear Shape Object Using R.” Stack Overflow, 10 Mar. 2012, https://stackoverflow.com/questions/9595117/identify-a-linear-feature-on-a-raster-map-and-return-a-linear-shape-object-using.
+
+Lizarazo, Ivan. Creation of Spatial Polygons in R. 16 Aug. 2016, https://rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
+
+Pebesma, Edzer. “Classes and Methods for Spatial Data \[R Package Sp Version 1.3-1].” *The Comprehensive R Archive Network (CRAN)*, 5 June 2018, https://cran.r-project.org/web/packages/sp/.
+
+Turner, Rolf. “Package Deldir.” *The Comprehensive R Archive Network (CRAN)*, 4 Jan. 2019, https://cran.r-project.org/web/packages/deldir/.
