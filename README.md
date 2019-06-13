@@ -31,7 +31,7 @@ This script calculates average slope and acceleration at each point of the ridge
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/W6_curvature_fomula.png" width="50%">
 
-It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge (column **curvature_bylength**). The output is a csv named OutputCurvatures.csv.
+It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge (column **curvature_bylength**). The output is a csv named OutputCurvatures.csv. For both measures of curvature, a larger number represnts a more curvy ridge.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/Final_Curvature_Output.gif">
 
@@ -124,3 +124,33 @@ doi:
 * https://cran.r-project.org/web/packages/PairViz/
 * https://cran.r-project.org/web/packages/TSP/
 * http://www.bioconductor.org/packages/release/bioc/html/graph.html
+
+
+Lizarazo, Ivan. Creation of Spatial Polygons in R. 16 Aug. 2016, rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
+
+
+Dawkins, Paul. “Calculus III - Curvature.” Paul's Online Notes, 29 Nov. 2018, tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx.
+
+
+“Identify a Linear Feature on a Raster Map and Return a Linear Shape Object Using R.” Stack Overflow, 10 Mar. 2012, stackoverflow.com/questions/9595117/identify-a-linear-feature-on-a-raster-map-and-return-a-linear-shape-object-using.
+
+
+Belmonte, Nicolas Garcia. Voronoi Tessellation. philogb.github.io/blog/2010/02/12/voronoi-tessellation/.
+
+
+Turner, Rolf. “Package Deldir.” *The Comprehensive R Archive Network (CRAN)*, 4 Jan. 2019, cran.r-project.org/web/packages/deldir/.
+
+
+Bivand, Roger. “Rgeos: Interface to Geometry Engine - Open Source ('GEOS') \[R package rgeos version 0.4-3].” *The Comprehensive R Archive Network (CRAN)*, 24 Apr. 2019, cran.r-project.org/web/packages/rgeos/.
+
+
+Pebesma, Edzer. “Classes and Methods for Spatial Data \[R Package Sp Version 1.3-1].” *The Comprehensive R Archive Network (CRAN)*, 5 June 2018, cran.r-project.org/web/packages/sp/.
+
+
+Hurley, Catherine, and R. W. Oldford. “Package PairViz.” *The Comprehensive R Archive Network (CRAN)*, 9 Aug. 2018, cran.r-project.org/web/packages/PairViz/.
+
+
+Hahsler, Michael, and Kurt Hornick. “Traveling Salesperson Problem (TSP) \[R Package TSP Version 1.1-7].” *The Comprehensive R Archive Network (CRAN)*, 22 May 2019, cran.r-project.org/web/packages/TSP/.
+
+
+“Graph: A Package to Handle Graph Data Structures.” Bioconductor, www.bioconductor.org/packages/release/bioc/html/graph.html.
