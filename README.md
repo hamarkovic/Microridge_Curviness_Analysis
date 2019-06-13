@@ -17,9 +17,9 @@ There are 3 main scripts included in this repository, along with a master (wrapp
 This is a bash script which concatenates the input csv files, and outputs a single csv (Concatenated_to_analyze.csv) with the concatenated information. It also adds a new column at the beginning of the csv storing each file name.
 
 #### Point_Simplifier.rmd
-This is an R script which uses the R package deldir to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses the package rgeos to find the insersections of the polygons within the pixel boundaries (blue)
+This is an R script which uses the R package [deldir](https://cran.r-project.org/web/packages/deldir/) to perform a [Voronoi tesselation](https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/) with the input points (orange). It then uses the package [rgeos](https://cran.r-project.org/web/packages/rgeos/) to find the insersections of the polygons within the pixel boundaries (blue)
 
-The R package PairViz (which requires having the packages TSP and graph installed) is used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
+The R package [PairViz](https://cran.r-project.org/web/packages/PairViz/) (which requires having the packages [TSP](https://cran.r-project.org/web/packages/TSP/) and [graph](http://www.bioconductor.org/packages/3.4/bioc/html/graph.html) installed) is used to perform an open Traveling Salesman Problem algorithm to order these points along the ridge (green), rather than by x value.
 
 It loops this process over every ridge and cell, and saves the information as a csv (OrderedPoints.csv) which is the input for Curvature_Math.rmd
 
@@ -27,7 +27,7 @@ It loops this process over every ridge and cell, and saves the information as a 
 
 #### Curvature_Math.rmd
 
-This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge.
+This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge. In addition, it removes any ridges made up of only 1 or 2 coordinates.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/W6_curvature_fomula.png" width="50%">
 
@@ -87,7 +87,11 @@ Some notes:
  * It's not necessary to save the workspace image after quitting R.
 
 #### Expected Output
-The program outputs a single csv file. The two columns of this file contain the cell ID and number of the ridge within that cell. The third column contains the ridge length. The fourth column contains a simple measure of curvature obtained by dividing the total length of the ridge by the distance between the endpoints of the ridge. The fifth column contains a curvature measure derived by calculating the curvature at each point using the first and second derivates, adding these values for each point of the ridge, and didviding by the length of the ridge.
+This program outputs 3 csv files (**Concatenated_to_analyze.csv**, **OrderedPoints.csv**, and **OutputCurvatures.csv**). **OutputCurvatures.csv** contains the final curvatures for each ridge. An example image of this file is above, under **Curvature_Math.rmd**. The first column, "cell," contains the original file name. The second, "ridge," contains the ridge numbers of each cell. The third column, "length," contains the length of each ridge. "dist_endpoints" contains the distance between the first and last point of the ridge. "curvature_bylength" contains the result of the length divided by the distance between endpoints. The last column, "curvature_formula," contains the sum of the curvatures at each point of the ridge, determined by the formula above.
+
+**Concatenates_to_analyze** contains the concatenated x and y coordinates, with file name saved as the first column, which is produced by **concatenate.sh**. **OrderedPoints.csv** contains the points used for the final curvature calculations, which were produced by Voronoi tesselation and ordered by a Traveling Salesman Problem algorithm.
+
+Examples of these files can be viewed in the Vignette directory, under Sample_outputs.
 
 #### Vignette
 Vignette instructions are in the directory named Vignette. There are two test files in the folder, and the output after running the program can be compared to those in the folder Sample_outputs.
