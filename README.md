@@ -115,6 +115,7 @@ doi:
 * https://rstudio-pubs-static.s3.amazonaws.com/202536_7a122ff56e9f4062b6b012d9921afd80.html
 * http://tutorial.math.lamar.edu/Classes/CalcIII/Curvature.aspx
 * https://stackoverflow.com/questions/9595117/identify-a-linear-feature-on-a-raster-map-and-return-a-linear-shape-object-using
+* https://philogb.github.io/blog/2010/02/12/voronoi-tessellation/
 * https://cran.r-project.org/web/packages/deldir/
 * https://cran.r-project.org/web/packages/rgeos/
 * https://cran.r-project.org/web/packages/sp/
