@@ -80,6 +80,8 @@ install.packages("tidyverse")
 q()
 bash Master_Script.sh
 ```
+If you already have the necessary packages, all you have to do is enter the Scripts directory and type: bash Master_Script.sh
+
 Some notes:
  * If you already have R loaded on your terminal, it's sometimes necessary to repeat the line: module load R/3.5.0
  * The first time you install a package, it will ask you to select a CRAN mirror
