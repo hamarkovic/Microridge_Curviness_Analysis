@@ -27,11 +27,11 @@ It loops this process over every ridge and cell, and saves the information as a 
 
 #### Curvature_Math.rmd
 
-This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge. In addition, it removes any ridges made up of only 1 or 2 coordinates.
+This script calculates average slope and acceleration at each point of the ridge, and then uses the following formula to calculate curvature at each point. It adds these curvature values together, and then divides by the length of the ridge (the column **curvature_formula**). In addition, it removes any ridges made up of only 1 or 2 coordinates.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/W6_curvature_fomula.png" width="50%">
 
-It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge. The output is a csv named OutputCurvatures.csv.
+It also outputs a more simple measue of curvature obtained by dividing the total ridge length by the distance between the endpoints of the ridge (column **curvature_bylength**). The output is a csv named OutputCurvatures.csv.
 
 <img src="https://github.com/hamarkovic/Microridge_Curviness_Analysis/blob/master/Images/Final_Curvature_Output.gif">
 
