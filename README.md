@@ -111,7 +111,7 @@ Vignette instructions are in the directory named Vignette. There are two test fi
 * Dr. Emily Curd and Daniel Chavez - guidance
 
 ### Citing
-doi:
+doi: 10.5281/zenodo.3245776
 
 ### References
 
